@@ -11,3 +11,35 @@
 .brand-title-img{height:clamp(2.6rem,6vw,4.5rem);width:auto;display:block}
 .vanguard-title-img{height:clamp(2.8rem,6.5vw,5rem);width:auto;display:block}
 @media(max-width:767px){.hero-logo-img{height:7.5rem}}
+
+/* --- Yeni: sepete ekleme bildirimi, sepet paneli, gerçek player, ürün detay sayfası --- */
+.toast-stack{position:fixed;bottom:20px;right:20px;z-index:200;display:flex;flex-direction:column;gap:.6rem;pointer-events:none}
+.toast-item{display:flex;align-items:center;gap:.5rem;background:#141416;border:1px solid #d7b56d55;color:#fff;padding:.75rem 1.1rem;font-size:12px;font-weight:600;box-shadow:0 12px 30px #0008;animation:toast-in .25s ease-out, toast-out .3s ease-in 2.5s forwards}
+.toast-item svg{color:#22c55e;flex-shrink:0}
+@keyframes toast-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes toast-out{to{opacity:0;transform:translateY(-8px)}}
+
+.cart-bump{animation:cart-bump .4s ease}
+@keyframes cart-bump{0%{transform:scale(1)}30%{transform:scale(1.18)}60%{transform:scale(.94)}100%{transform:scale(1)}}
+
+.cart-panel{position:absolute;right:1.25rem;top:5.5rem;z-index:40;width:min(320px,86vw);background:#0c0c0e;border:1px solid #ffffff20;padding:1.25rem;box-shadow:0 20px 50px #000a}
+.cart-line{display:flex;align-items:center;gap:.7rem;padding:.6rem 0;border-bottom:1px solid #ffffff0f}
+.cart-line img{width:44px;height:44px;object-fit:cover;flex-shrink:0}
+
+.spotify-embed-wrap{border:1px solid #8b5cf640;background:#ffffff08;padding:.6rem;backdrop-filter:blur(12px)}
+.spotify-embed-wrap iframe{display:block}
+
+.album-card{background:none;border:none;padding:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
+.album-art{position:relative;aspect-ratio:1;overflow:hidden;display:grid;place-items:center;transition:.3s;background:#111}
+.album-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.4s}
+.album-card:hover .album-art img{transform:scale(1.06)}
+.album-card:hover .album-art{transform:translateY(-5px);box-shadow:0 14px 40px #0008}
+.album-card--active .album-art{outline:2px solid #a78bfa}
+.album-play-overlay{position:absolute;inset:0;display:grid;place-items:center;background:#000000a0;color:#fff;opacity:0;transition:.25s}
+.album-card:hover .album-play-overlay,.album-card--active .album-play-overlay{opacity:1}
+
+.product-card-hint{position:absolute;inset:0;display:grid;place-items:center;background:#000000a6;color:#fff;font-size:10px;font-weight:800;letter-spacing:.2em;opacity:0;transition:.25s}
+.product-card:hover .product-card-hint{opacity:1}
+
+.add-btn--lg{padding:1rem}
+.product-detail{padding-top:.5rem}
